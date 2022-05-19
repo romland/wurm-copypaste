@@ -63,8 +63,13 @@ There is still work that needs to be done for this. Primarily the migration of s
 
 
 
-## How to install
-TODO
+## Download and Install
+I think it's a matter of installing like any other server mod.
+
+After installation the mod will create a directory at the same level as 'mods' called "Friyas-Clipboard" where all copied areas are automatically saved.
+
+[Download here](https://github.com/romland/wurm-copypaste/releases/tag/v0.5)
+
 
 ## How to use
 Firstly, remember that this mod has never been _used_ by anyone but myself. There will _undoubtedly_ be bugs. Feel free to fix them and submit a fix to this repository.
@@ -95,17 +100,17 @@ _Other helpful notes_
 ## The code
 As you might expect with mods, this is coding-on-the-run, it's very prototypy and rough around the edges. It's not commercial-grade code. :-) But knowing myself, non-obvious bits should have a comment attached.
 
-There is also likely a lot of commented out code in places as I was in the middle of debugging things.
+
 
 ### Random notes
-- Like all of my mods, the entry point is in Mod.java
+- Like all of the mods I made, the entry point is in Mod.java
 - Tabs are awesome. Shoo with your pesky spaces. Everything is in 4-space tabs, which is why indentation may look like shit if browsed on GitHub.
 - A lot of debug statements are still output as info
 - I have no idea why I brought in an HTTP client into the CopyPaste namespace. The author is Matthew Bell and I think it's this one: https://github.com/urgrue/java-async-http (MIT licensed). The idea behind the useage seems to be uploading creations to a central repository.
 - The bulk of the tricky bits seems to be in Paste.java
 - In Testing.java I seem to create a very very large Bulk Storage Bin with all resources in the game? Not sure why I had that in here.
 - In Mod.java there is a way to automatically bring in something into the Copy buffer on server-start; this is for easier testing during development
-
+- There is likely a lot of commented out code in places as I was in the middle of debugging things.
 
 ## Dependencies
 Just one. The JSON library from Google. It is used for (de-)serialization of copied content. The version gson-2.8.0.jar is what I used back then it seems.
