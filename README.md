@@ -85,8 +85,8 @@ As a gamemaster (GM):
 	ctrl+m		/clipboardsize +5    Increase the selection size by 5 files in each direction
 	ctrl+b		/rotate 90 degrees   Rotate whatever you have in the copy buffer
 	ctrl+z		/undo                Undo your last paste/cut/delete
-	            /load                Load a saved area into copy-buffer. No key assigned.
-	            /dir                 Show a listing of saved areas. No key assigned.
+	      		/load                Load a saved area into copy-buffer. No key assigned.
+	      		/dir                 Show a listing of saved areas. No key assigned.
 ```
 
 If I remember correctly, there is a menu called "Friya's Clipboard" if you right-click on an item, structure or tile.
