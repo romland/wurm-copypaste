@@ -10,7 +10,7 @@ I wrote the code in 2016-2017, it's now 2022 and this is my attempt at documenti
 
 ### Additional features
 - anything copied can be rotated before pasted.
-- it uses its own for serialization (saving) and deserialization (loading) of copied areas so that one can paste things between servers or worlds.
+- it uses its own serialization (saving) and deserialization (loading) of copied areas so that one can paste things between servers or worlds.
 - voluntary allowing/disallowing pasting of items (say, you are only allowed to paste a maxiumum of 3 HOTA statues)
 
 ## Examples
@@ -92,15 +92,10 @@ _Other helpful notes_
 - Oops. Looking at clips I made back then, it seems like I never stashed the copy/paste/undo/cut into a submenu, it's in the root of the main menu :-)
 
 
-
-## What is not finished
-It's now 2022 and I am going through my notes 5-6 years after the fact.
-
-It seems I got what I needed the mod for, namely: being able to create cities by quickly pasting decorated houses, etc.
-
-
 ## The code
 As you might expect with mods, this is coding-on-the-run, it's very prototypy and rough around the edges. It's not commercial-grade code. :-) But knowing myself, non-obvious bits should have a comment attached.
+
+There is also likely a lot of commented out code in places as I was in the middle of debugging things.
 
 ### Random notes
 - Like all of my mods, the entry point is in Mod.java
@@ -120,5 +115,70 @@ Just one. The JSON library from Google. It is used for (de-)serialization of cop
 - You can't paste underground structures/caves. It is not an impossible thing to add support for it if you familiarize yourself with the code. You would probably need to modify landscape in arbitrary ways _above_ the copied area, which might not be super trivial to navigate correctly. That's for the pasting, the copying of data should be trivial as it's just a matter of changing a 0 to 1 or so.
 - You cannot copy/paste creatures (I deem it out of scope)
 
-## TODO
-Again, writing this 5-6 years after the fact
+## What is not finished / TODO
+It's now 2022 and I am going through my notes 5-6 years after the fact.
+
+It seems I got what I needed the mod for, namely: being able to create cities by quickly pasting decorated houses, etc.
+
+_The old TODO list mention the following items (many of which mean nothing to me any more):_
+
+- Primary issues
+	- rotation: rotating bridges does not work (2022: I recall spending quite some time on this one!)
+	- flatten: Terraforming.flattenImmediately(this.getResponder(), stx, endtx, sty, endty, 1.0f)
+	- tweak rotation code for: 180 and 270 degrees on all pasted thingies - start with landscape
+	- UNDO must remember which rotation we had when we pasted in (I think?), landscape did not get properly restored after an undo with rotated paste
+	- Optionally include but limit at N pieces: hota statues, and other "valuable" items
+	- add the paste chat command (important to be able paste from different buffers) (2022: I think done!)
+	- add copy/cut/delete chat commands (2022: I think done!)
+	- minedoors seems to be copied and pasted (2022: we do not copy underground)
+	- the random "plans" we see in buildings, are they the center tile from structures? Do we need to add (or remove) those together with buildtiles?
+	- more arrows when resizing clipboard (one every five tiles?) -- put in its own variable, not really a setting anyway
+	- on deletion:
+		- BUG: need to relog for bridges to disappear sometimes -- do we need to refresh tiles when deleting?
+		- parapets, gravestones ... are not destroyed -- same with rope fences?
+		- TODO: when deleting, say how big area we are deleting
+		- TODO: Cut/Delete should set decent names of the areas too (in clipboard buffers)
+		- TEST: are we deleting parapets that are *in* buildings when 'delete'? (The Friyanouce deed had a few)
+		- TEST: destroy bridge in 'delete' does not seem to completely clean up (structure.totallyDestroy();)
+		  see: com/wurmonline/server/behaviours/BridgePartBehaviour.java for deletion
+		- BUG: If we change landscape, make sure we delete all items in the area or they may be flying/in ground
+	- have a toggle button that shows the shape/size of a paste in a paste buffer (show corners with arrows or so), this means we don't have to count all the time
+	- issue: copying an item should not take entire tile, just take that item
+	- if exceptions come in an action, catch them so we can still return action as done or the action will be bugged for that player onwards
+	- BUG: in stables of Edgehedge, some planned structures, also: there seems to be a planned building at bottom of Edgehedge entrance bridge -- I did not see it in the original
+	- BUG: mine entrances (without minedoors) get copied (but turn into a hole) -- see Friyanouce deed)
+	- BUG: Small bridge between the two warehouse buildings in Edgehedge is missing somehow
+	- BUG: fences seem to lurk on the edge when deleted (so undoing/pasting too) (probably a 1-off bug)
+	- BUGish: we get items from mines and put them on surface -- either we get mines, or we don't
+	- BUG: why do I get stirred dirt when pasting the 1x1 test?
+	- This seems to already be avoided: Possible ISSUE: Remove restriction for more than one building when pasting (in case there are several unfinished buildings in an area) error: [00:17:37] You cannot design a new house as your mind keeps reverting back to the house "East wall" that you are currently constructing.
+
+	- Landscaping:
+		- make hill/hole (additive)
+		- smooth (some (perlin) noise on area, adapting to edges)
+		- level area
+		- when going below water surface, add sand on edges
+
+	- Lower priority:
+		- instant create completed wall, (incl. plan building unless connected to another building) -- be able to set type somehow (keybind!)
+		- if bridges are linked to a building, include them when copying a structure (and vice versa)
+		- rotation: diagonal pavement, how does that turn out?
+		- be able to paste "flat" (landscape gets set to offset 0 height on every tile)
+		- paste following landscape, but "according to rules" (roads cannot be more than 20 tiles, buildings must stand on flat, bridges must be above ground)
+		- rename mod to Clipboard
+		- make submenu: "Friya's Clipboard" then sub-commands under that
+		- show number of tiles in buffer in paste menu? I.e: Paste (6 x 7)
+		- action to examine a paste's original altitude: before pasting, it could be nice to see what height it was copied at (so you know if landscape 
+		will look approximately the same)
+		- TEST: can we check the 'decoration' itemtype to see if we should copy or not? what is included in that?
+		- can we delay the serializing when copying? it's quite slow? or in another thread?
+		- TODO: Guard towers disappear after reboot (I believe) -- maybe this is OK!
+		- BUG: If we shut down too fast after modifying landscape, the changes never get to the mesh. Can we force an update of mesh?
+		- TODO: stagecount on bridges does not get copied :/
+		- can we do partial pasting as it's kind of slow? or in another thread?
+		- TEST: can we run the copying and pasting in separate threads? Copying SHOULD be easier
+		- need a dialog/preselected choices (or something) to select size of area in: copy/cut/delete (for more advanced copy from disk and into specific buffer etc)
+		- make some UI element for selecting size that does NOT require you to start typing (i.e. slider, radio buttons, dropdown menu)
+		- BUG: Make sure we don't paste too close to edges of map (remember that it might be rotated too)
+		- wth are these items: 680, "Libila stone", 637, "freedom stones"
+		- action: redo (undo an undo)
