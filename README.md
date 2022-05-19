@@ -104,13 +104,13 @@ As you might expect with mods, this is coding-on-the-run, it's very prototypy an
 
 ### Random notes
 - Like all of the mods I made, the entry point is in Mod.java
-- Tabs are awesome. Shoo with your pesky spaces. Everything is in 4-space tabs, which is why indentation may look like shit if browsed on GitHub.
+- Tabs are awesome. Shoo with your pesky spaces. Everything is (should be) in 4-space tabs, which is why indentation may look like shit if browsed on GitHub.
 - A lot of debug statements are still output as info
 - I have no idea why I brought in an HTTP client into the CopyPaste namespace. The author is Matthew Bell and I think it's this one: https://github.com/urgrue/java-async-http (MIT licensed). The idea behind the useage seems to be uploading creations to a central repository.
 - The bulk of the tricky bits seems to be in Paste.java
 - In Testing.java I seem to create a very very large Bulk Storage Bin with all resources in the game? Not sure why I had that in here.
 - In Mod.java there is a way to automatically bring in something into the Copy buffer on server-start; this is for easier testing during development
-- There is likely a lot of commented out code in places as I was in the middle of debugging things.
+- There is likely a lot of commented out code in places as I was in the middle of debugging things. Especially around bridge-rotation; if you want to have a go at it, feel free to delete all the commented out code and submit a PR.
 
 ## Dependencies
 Just one. The JSON library from Google. It is used for (de-)serialization of copied content. The version gson-2.8.0.jar is what I used back then it seems.
@@ -158,13 +158,13 @@ _The old TODO list mention the following items (many of which mean nothing to me
 	- BUG: why do I get stirred dirt when pasting the 1x1 test?
 	- This seems to already be avoided: Possible ISSUE: Remove restriction for more than one building when pasting (in case there are several unfinished buildings in an area) error: [00:17:37] You cannot design a new house as your mind keeps reverting back to the house "East wall" that you are currently constructing.
 
-	- Landscaping:
+	- New functionality; landscaping:
 		- make hill/hole (additive)
 		- smooth (some (perlin) noise on area, adapting to edges)
 		- level area
 		- when going below water surface, add sand on edges
 
-	- Lower priority:
+	- New functionality and/or lower priority:
 		- instant create completed wall, (incl. plan building unless connected to another building) -- be able to set type somehow (keybind!)
 		- if bridges are linked to a building, include them when copying a structure (and vice versa)
 		- rotation: diagonal pavement, how does that turn out?
