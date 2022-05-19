@@ -13,9 +13,10 @@ I wrote the code in 2016-2017, it's now 2022 and this is my attempt at documenti
 - it uses its own for serialization (saving) and deserialization (loading) of copied areas so that one can paste things between servers or worlds.
 - voluntary allowing/disallowing pasting of items (say, you are only allowed to paste a maxiumum of 3 HOTA statues)
 
-
 ## Examples
-[![Example Video](https://img.youtube.com/vi/7z0LZVvHGz8/0.jpg)](https://www.youtube.com/watch?v=7z0LZVvHGz8 "Example Video")
+[![Example Video](https://img.youtube.com/vi/G461my30wSI/0.jpg)](https://www.youtube.com/watch?v=G461my30wSI "Example Video")
+[![Example Video](https://img.youtube.com/vi/7z0LZVvHGz8/0.jpg)](https://www.youtube.com/watch?v=7z0LZVvHGz8?t=85 "Example Video")
+[![Example Video](https://img.youtube.com/vi/GeVNs42LwOg/0.jpg)](https://www.youtube.com/watch?v=GeVNs42LwOg "Example Video")
 
 
 ## The basic idea
