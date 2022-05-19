@@ -14,6 +14,10 @@ I wrote the code in 2016-2017, it's now 2022 and this is my attempt at documenti
 - voluntary allowing/disallowing pasting of items (say, you are only allowed to paste a maxiumum of 3 HOTA statues)
 
 
+## Examples
+[![Example Video](https://img.youtube.com/vi/7z0LZVvHGz8/0.jpg)](https://www.youtube.com/watch?v=7z0LZVvHGz8 "Example Video")
+
+
 ## The basic idea
 At the fundamental level this looks like a good tool for gamemasters to quickly slap up decorated houses or deeds. For instance, building a large-scale
 city becomes a piece of cake.
@@ -55,11 +59,6 @@ There is still work that needs to be done for this. Primarily the migration of s
 3. A CTF type game  
   ... a small, limited life-time server that would start on demand when two teams want to have a go at eachother, each team bring their own
   deed. The goal is X. Winner wins, loser loses and server is shutdown. Perhaps have some kind of toplist to store the result. Caves are not copied.
-
-
-## Examples
-
-[![Example Video](https://img.youtube.com/vi/7z0LZVvHGz8/0.jpg)](https://www.youtube.com/watch?v=7z0LZVvHGz8 "Example Video")
 
 
 
