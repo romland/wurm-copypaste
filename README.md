@@ -6,12 +6,12 @@ This server mod implements copy, cut, paste, undo:
 - Decorations (tables, chairs, gnomes, etc)
 - Access (doors, gates, chests, etc)
 
-I wrote the code in 2016-2017, it's now 2022 and this is my attempt at documenting this.
+I wrote ths code some years back, this is my attempt at documenting this.
 
 *Note: I do not know whether this mod works on latest version of Wurm Unlimited. In general, though, pretty small patches are needed for upgrades.*
 
 ### Additional features
-- anything copied can be rotated before pasted.
+- anything copied can be rotated before pasted (rotation of some things is not finished, most notably bridges).
 - it uses its own serialization (saving) and deserialization (loading) of copied areas so that one can paste things between servers or worlds.
 - voluntary allowing/disallowing pasting of items (say, you are only allowed to paste a maxiumum of 3 HOTA statues)
 
@@ -123,7 +123,7 @@ Just one. The JSON library from Google. It is used for (de-)serialization of cop
 - You cannot copy/paste creatures (I deem it out of scope)
 
 ## What is not finished / TODO
-It's now 2022 and I am going through my notes 5-6 years after the fact.
+Note: I am just going through notes from some years back here, I do not know for sure what is _actually_ done or not done in the list below.
 
 It seems I got what I needed the mod for, namely: being able to create cities by quickly pasting decorated houses, etc.
 
