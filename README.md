@@ -11,7 +11,7 @@ I wrote ths code some years back, this is my attempt at documenting this.
 *Note: I do not know whether this mod works on latest version of Wurm Unlimited. In general, though, pretty small patches are needed for upgrades.*
 
 ### Additional features
-- anything copied can be rotated before pasted (rotation of some things is not finished, most notably bridges).
+- anything copied can be rotated before pasted (err: rotation of some things is not working, most notably bridges, PR's welcome).
 - it uses its own serialization (saving) and deserialization (loading) of copied areas so that one can paste things between servers or worlds.
 - voluntary allowing/disallowing pasting of items (say, you are only allowed to paste a maxiumum of 3 HOTA statues)
 
