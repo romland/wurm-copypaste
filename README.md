@@ -8,6 +8,8 @@ This server mod implements copy, cut, paste, undo:
 
 I wrote the code in 2016-2017, it's now 2022 and this is my attempt at documenting this.
 
+*Note: I do not know whether this mod works on latest version of Wurm Unlimited. In general, though, pretty small patches are needed for upgrades.*
+
 ### Additional features
 - anything copied can be rotated before pasted.
 - it uses its own serialization (saving) and deserialization (loading) of copied areas so that one can paste things between servers or worlds.
