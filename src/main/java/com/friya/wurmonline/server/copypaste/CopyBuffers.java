@@ -10,11 +10,11 @@ import com.google.gson.Gson;
 
 class CopyBuffers
 {
-	private static Logger logger = Logger.getLogger(CopyBuffers.class.getName());
+	private static final Logger logger = Logger.getLogger(CopyBuffers.class.getName());
 	private static CopyBuffers instance = null;
 
-	private int maxBuffersPerOwner = 10;
-	private Map<String, LinkedList<Buffer>> buffers = new HashMap<>();
+	private final int maxBuffersPerOwner = 10;
+	private final Map<String, LinkedList<Buffer>> buffers = new HashMap<>();
 	
 
 
@@ -76,7 +76,7 @@ class CopyBuffers
 		Gson gson = new Gson();
 		Area a = gson.fromJson(buffers.get(owner).get(id).area, Area.class);
 		
-		// NOTE: This is a dumb fix. I had a lot of saved areas and introduced file incompatiblity.
+		// NOTE: This is a dumb fix. I had a lot of saved areas and introduced file incompatibility.
 		a.attachFix();
 		return a;
 	}

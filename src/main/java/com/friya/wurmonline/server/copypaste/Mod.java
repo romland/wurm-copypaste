@@ -80,7 +80,6 @@ public class Mod implements WurmServerMod, Initable, Configurable, ServerStarted
 	static String saveFilePassword = "oia8wekjasdfnasdiouysrhjewrh82122";
 
 
-	@Override
 	public void configure(Properties properties)
 	{
 	
@@ -106,13 +105,11 @@ public class Mod implements WurmServerMod, Initable, Configurable, ServerStarted
 	}
 
 
-	@Override
 	public void preInit()
 	{
 	}
 
 
-	@Override
 	public void init()
 	{
 		WurmServerMod.super.init();
@@ -120,14 +117,12 @@ public class Mod implements WurmServerMod, Initable, Configurable, ServerStarted
 	}
 
 
-	@Override
 	public void onItemTemplatesCreated()
 	{
 		FloatingMarker.onItemTemplatesCreated();
 	}
 
 
-	@Override
 	public void onServerStarted()
 	{
 		ModActions.registerAction(new ActionExamine());
@@ -256,7 +251,6 @@ public class Mod implements WurmServerMod, Initable, Configurable, ServerStarted
 	}
 
 
-	@Override
 	public void onPlayerLogin(Player p)
 	{
 		if(isTestEnv() && p.getName().equals("Friya")) {

@@ -10,7 +10,7 @@ class RemoveMarkerEvent extends EventOnce
 	
 	public RemoveMarkerEvent(int fromNow, String owner, long id)
 	{
-        super(fromNow, EventOnce.Unit.MILLISECONDS);
+        super(fromNow, Unit.MILLISECONDS);
         
         this.owner = owner;
         this.id = id;

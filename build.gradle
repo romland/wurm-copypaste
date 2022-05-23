@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+apply plugin:'java'
+
+group 'friya.wurmonline.server'
+version '1.1'
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs "I:\\SteamLibrary\\steamapps\\common\\Wurm Unlimited\\WurmServerLauncher"
+    }
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'org.gotti.wurmunlimited:modlauncher'
+    implementation 'org.gotti.wurmunlimited:server'
+    implementation 'org.gotti.wurmunlimited:common'
+}
+
+jar {
+    archiveName "${project.name}.jar"
+}
+
+task dist(type: Zip) {
+    into("mods", {
+        into(project.name, {
+            from jar
+        })
+        from fileTree(dir: 'mods', include: '*')
+    })
+
+    archiveName "${project.name}-${project.version}.zip"
+}

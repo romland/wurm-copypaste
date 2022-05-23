@@ -63,7 +63,6 @@ class ActionCopy implements ModAction
 	}
 	
 	
-	@Override
 	public BehaviourProvider getBehaviourProvider()
 	{
 		return new BehaviourProvider() {
@@ -142,7 +141,6 @@ class ActionCopy implements ModAction
 	}
 
 
-	@Override
 	public ActionPerformer getActionPerformer()
 	{
 		return new ActionPerformer() {
@@ -183,7 +181,6 @@ class ActionCopy implements ModAction
 
 
 			// On item without activated object
-			@Override
 			public boolean action(Action act, Creature performer, Item target, short action, float counter)
 			{
 				return action(act, performer, null, target, action, counter);
@@ -191,7 +188,6 @@ class ActionCopy implements ModAction
 
 
 			// On item with activated object
-			@Override
 			public boolean action(Action act, Creature performer, Item item, Item target, short action, float counter)
 			{
 				if (!isAllowed(performer)) {

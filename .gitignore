@@ -1,3 +1,10 @@
-bin
-.project
-.settings
+/bin
+/out
+/build
+/run
+/.idea
+/eclipse
+/.gradle
+/*.iml
+/*.ipr
+/libs
