@@ -16,10 +16,17 @@ I wrote ths code some years back, this is my attempt at documenting this.
 - voluntary allowing/disallowing pasting of items (say, you are only allowed to paste a maxiumum of 3 HOTA statues)
 
 ## Examples
-[![Example Video](https://img.youtube.com/vi/G461my30wSI/0.jpg)](https://www.youtube.com/watch?v=G461my30wSI "Example Video")
-[![Example Video](https://img.youtube.com/vi/tXXWKWNwDoU/0.jpg)](https://www.youtube.com/watch?v=tXXWKWNwDoU "Example Video")
-[![Example Video](https://img.youtube.com/vi/7z0LZVvHGz8/0.jpg)](https://www.youtube.com/watch?v=7z0LZVvHGz8?t=85 "Example Video")
-[![Example Video](https://img.youtube.com/vi/GeVNs42LwOg/0.jpg)](https://www.youtube.com/watch?v=GeVNs42LwOg "Example Video")
+[![Example Video](https://img.youtube.com/vi/G461my30wSI/0.jpg)](https://www.youtube.com/watch?v=G461my30wSI "Example Video")  
+Click image for Youtube clip.  
+
+[![Example Video](https://img.youtube.com/vi/tXXWKWNwDoU/0.jpg)](https://www.youtube.com/watch?v=tXXWKWNwDoU "Example Video")  
+Click image for Youtube clip.  
+
+[![Example Video](https://img.youtube.com/vi/7z0LZVvHGz8/0.jpg)](https://www.youtube.com/watch?v=7z0LZVvHGz8?t=85 "Example Video")  
+Click image for Youtube clip.  
+
+[![Example Video](https://img.youtube.com/vi/GeVNs42LwOg/0.jpg)](https://www.youtube.com/watch?v=GeVNs42LwOg "Example Video")  
+Click image for Youtube clip.  
 
 
 ## The basic idea
